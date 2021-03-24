@@ -1,50 +1,20 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { useState, useEffect } from 'react';
-import CreatePost from "./components/CreatePost";
+import React, { useState, useEffect } from "react";
+import "../App.css"
 
-const App = () => {
+export default function CreatePost() {
 
     // creating STATEs
-    const [userName, setUserName] = React.useState<string>("");
-    const [title, setTitle] = React.useState<string>("");
-    const [text, setText] = React.useState<string>("");
+    // const [userName, setUserName] = useState("");
+    // const [title, setTitle] = useState("");
+    // const [text, setText] = useState("");
 
-    // this makes request to the backend
-    // const submitPost = (e: React.MouseEvent<HTMLButtonElement>) => {
-    //     e.preventDefault();
-    //     console.log({text, userid:1});
-    //     const res = await fetch("/api/blogs", {
-    //         method: "POST",
-    //         headers: {
-    //             "Content-Type": "application/json"
-    //         },
-    //         body: JSON.stringify(text, userName)
-    //     })
-    //     history.push("/");
+    // // this makes request to the backend
+    // const submitPost = () => {
+
     // }
-
-    useEffect(() => {
-		async function getUserName() {
-			try {
-				const res = await fetch('/api/hello');
-				const userName = await res.json();
-				setUserName(userName);
-			} catch (error) {
-				console.log(error);
-			}
-		}
-		getUserName();
-	}, []);
-
-    interface AppProps {}
 
     return (
         <>
-        <main className="container my-5">
-			<h3 className="text-primary text-center">What Do You Want to Blog About, {userName}!</h3>
-		</main>
-
             <div className="CreatePost">
                 <div className="uploadPost border m-5 p-3">
                     <div className="mb-3">
@@ -72,9 +42,7 @@ const App = () => {
                         <textarea 
                             className="form-control" 
                             placeholder="What do you want to blog about?" 
-                            value={text}
                             onChange={(e) => { setText(e.target.value)
-                            
                         }}/>
                     </div>
 
@@ -82,9 +50,6 @@ const App = () => {
                 </div>
             </div>
         </>
-
-
     )
 }
 
-export default App;

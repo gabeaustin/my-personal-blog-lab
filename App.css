@@ -1,0 +1,41 @@
+.App {
+    text-align: center;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    width: 100%;
+    height: 6em;
+    background-color: #143d59;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.navbar .links {
+    font-size: 2em;
+    color: #fff;
+    text-decoration: none;
+    padding: 2em;
+}
+
+.links:hover {
+    color: #f4b41a;
+    cursor: pointer;
+}
+
+.CreatePost {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.uploadPost {
+    display: flex;
+    flex-direction: column;
+}
